@@ -1,0 +1,304 @@
+{
+    "title": "VoiceDoc Agent - Health & LLM Observability",
+    "description": "Real-time monitoring of VoiceDoc Agent performance, costs, and LLM usage.",
+    "widgets": [
+        {
+            "definition": {
+                "title": "Avg Request Latency (s) by Voice Mode",
+                "show_legend": false,
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "response_format": "timeseries",
+                        "queries": [
+                            {
+                                "data_source": "metrics",
+                                "name": "query1",
+                                "query": "avg:voicedoc.request.latency_ms{service:voicedoc-agent,$traffic_type} by {voice_mode} / 1000"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "layout": {
+                "x": 0,
+                "y": 0,
+                "width": 4,
+                "height": 3
+            }
+        },
+        {
+            "definition": {
+                "title": "Avg TTFT (s) by Voice Mode",
+                "show_legend": false,
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "response_format": "timeseries",
+                        "queries": [
+                            {
+                                "data_source": "metrics",
+                                "name": "query1",
+                                "query": "avg:voicedoc.llm.ttft{service:voicedoc-agent,$traffic_type} by {voice_mode} / 1000"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "layout": {
+                "x": 4,
+                "y": 0,
+                "width": 4,
+                "height": 3
+            }
+        },
+        {
+            "definition": {
+                "title": "Total Requests (Hits) by Voice Mode",
+                "show_legend": false,
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "response_format": "timeseries",
+                        "queries": [
+                            {
+                                "data_source": "metrics",
+                                "name": "query1",
+                                "query": "sum:voicedoc.request.hits{service:voicedoc-agent,$traffic_type} by {voice_mode}.as_count()"
+                            }
+                        ],
+                        "display_type": "bars"
+                    }
+                ]
+            },
+            "layout": {
+                "x": 8,
+                "y": 0,
+                "width": 4,
+                "height": 3
+            }
+        },
+        {
+            "definition": {
+                "title": "LLM Cost Over Time (Cents USD) - Gemini Only",
+                "show_legend": false,
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "response_format": "timeseries",
+                        "queries": [
+                            {
+                                "data_source": "metrics",
+                                "name": "query1",
+                                "query": "sum:voicedoc.llm.cost.total{service:voicedoc-agent,$traffic_type} by {voice_mode}.as_count()"
+                            }
+                        ],
+                        "formulas": [
+                            {
+                                "formula": "query1 * 100"
+                            }
+                        ],
+                        "display_type": "bars"
+                    }
+                ]
+            },
+            "layout": {
+                "x": 0,
+                "y": 3,
+                "width": 4,
+                "height": 3
+            }
+        },
+        {
+            "definition": {
+                "title": "Total Tokens Used (Cumulative)",
+                "show_legend": false,
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "response_format": "timeseries",
+                        "queries": [
+                            {
+                                "data_source": "metrics",
+                                "name": "query1",
+                                "query": "sum:voicedoc.llm.tokens.total{service:voicedoc-agent,$traffic_type} by {voice_mode}.as_count()"
+                            }
+                        ],
+                        "display_type": "bars"
+                    }
+                ]
+            },
+            "layout": {
+                "x": 4,
+                "y": 3,
+                "width": 4,
+                "height": 3
+            }
+        },
+        {
+            "definition": {
+                "title": "Request Success Count by Voice Mode",
+                "show_legend": false,
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "response_format": "timeseries",
+                        "queries": [
+                            {
+                                "data_source": "metrics",
+                                "name": "query1",
+                                "query": "sum:voicedoc.request.success{service:voicedoc-agent,$traffic_type} by {voice_mode}.as_count()"
+                            }
+                        ],
+                        "display_type": "bars"
+                    }
+                ]
+            },
+            "layout": {
+                "x": 8,
+                "y": 3,
+                "width": 4,
+                "height": 3
+            }
+        },
+        {
+            "definition": {
+                "title": "Persona Classification Requests (Count)",
+                "type": "sunburst",
+                "requests": [
+                    {
+                        "response_format": "scalar",
+                        "queries": [
+                            {
+                                "data_source": "metrics",
+                                "name": "query1",
+                                "query": "sum:voicedoc.persona.classified{service:voicedoc-agent,$traffic_type} by {persona_type}.as_count()",
+                                "aggregator": "avg"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "layout": {
+                "x": 0,
+                "y": 6,
+                "width": 4,
+                "height": 3
+            }
+        },
+        {
+            "definition": {
+                "title": "Avg Response Length (chars) by Voice Mode",
+                "show_legend": false,
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "response_format": "timeseries",
+                        "queries": [
+                            {
+                                "data_source": "metrics",
+                                "name": "query1",
+                                "query": "avg:voicedoc.response.length{service:voicedoc-agent,$traffic_type} by {voice_mode}"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "layout": {
+                "x": 4,
+                "y": 6,
+                "width": 4,
+                "height": 3
+            }
+        },
+        {
+            "definition": {
+                "title": "Error Rate (%)",
+                "type": "query_value",
+                "requests": [
+                    {
+                        "response_format": "scalar",
+                        "queries": [
+                            {
+                                "data_source": "metrics",
+                                "name": "query1",
+                                "query": "sum:voicedoc.request.errors{service:voicedoc-agent,$traffic_type}.as_count()",
+                                "aggregator": "sum"
+                            },
+                            {
+                                "data_source": "metrics",
+                                "name": "query2",
+                                "query": "sum:voicedoc.request.hits{service:voicedoc-agent,$traffic_type}.as_count()",
+                                "aggregator": "sum"
+                            }
+                        ],
+                        "formulas": [
+                            {
+                                "formula": "query1 / (query2 + 0.0001) * 100"
+                            }
+                        ]
+                    }
+                ],
+                "autoscale": true,
+                "precision": 2
+            },
+            "layout": {
+                "x": 8,
+                "y": 6,
+                "width": 4,
+                "height": 3
+            }
+        },
+        {
+            "definition": {
+                "title": "Prompt vs Completion Token Ratio",
+                "show_legend": true,
+                "type": "timeseries",
+                "requests": [
+                    {
+                        "response_format": "timeseries",
+                        "queries": [
+                            {
+                                "data_source": "metrics",
+                                "name": "query1",
+                                "query": "avg:voicedoc.llm.completion_tokens{service:voicedoc-agent,$traffic_type} by {voice_mode}"
+                            },
+                            {
+                                "data_source": "metrics",
+                                "name": "query2",
+                                "query": "avg:voicedoc.llm.prompt_tokens{service:voicedoc-agent,$traffic_type} by {voice_mode}"
+                            }
+                        ],
+                        "formulas": [
+                            {
+                                "alias": "Completion",
+                                "formula": "query1"
+                            },
+                            {
+                                "alias": "Prompt",
+                                "formula": "query2"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "layout": {
+                "x": 0,
+                "y": 9,
+                "width": 12,
+                "height": 3
+            }
+        }
+    ],
+    "template_variables": [
+        {
+            "name": "traffic_type",
+            "prefix": "traffic_type",
+            "default": "*"
+        }
+    ],
+    "layout_type": "ordered",
+    "notify_list": [],
+    "reflow_type": "fixed",
+    "pause_auto_refresh": false
+}

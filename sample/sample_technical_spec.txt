@@ -1,0 +1,23 @@
+VoiceDoc Agent Technical Specification
+
+1. Overview
+VoiceDoc Agent is a Voice-Native RAG application. It transforms static documents into conversational experiences.
+Key technologies include Google Vertex AI (Gemini + Embeddings) and ElevenLabs (Agents + TTS).
+
+2. Persona System
+The agent determines the document type and switches personas:
+- Legal: Formal, precise.
+- Financial: Structured, concise.
+- Technical: Explanatory, neutral.
+- Academic: Analytical, citation-focused.
+- Narrative: Conversational, engaging.
+
+3. Architecture
+- Frontend: Next.js + React.
+- Backend: Next.js API Routes (Serverless).
+- Database: Firestore Native Mode (Vector Search).
+- Storage: Firestore (Chunks) + GCS (Files - Optional).
+
+4. Data Flow
+Upload -> PDF Parse -> Gemini Classification -> Chunking -> Vertex AI Embedding -> Firestore Storage.
+Chat -> Speech-to-Text -> Embedding -> Firestore Vector Search -> Gemini Generation -> Text-to-Speech.
