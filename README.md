@@ -2,9 +2,9 @@
 
 **Voice‑native document intelligence powered by Google Cloud, ElevenLabs, & Datadog**
 
-VoiceDoc Agent transforms static documents into *living conversations*. Users can upload PDFs or text files and interact with them entirely through speech. The agent not only understands the content using Gemini on Vertex AI, but dynamically adapts its **voice, tone, and conversational behavior** based on the type of document — proving that voice is a core part of the intelligence, not an afterthought.
+VoiceDoc Agent transforms static documents into *living conversations*. Built on **Google Cloud’s partner ecosystem**, the agent enables users to upload text-based documents and interact with them entirely through speech. Using **Gemini on Vertex AI** for reasoning and **ElevenLabs Agents** for expressive, real-time voice, VoiceDoc Agent demonstrates how partner AI services can be composed into a cohesive, production-grade system.
 
-This project is built for the **ElevenLabs × Google Cloud Hackathon** (with a strong emphasis on **Datadog-powered LLM observability**).
+The project was created for **AI Partner Catalyst: Accelerate Innovation**, showcasing how Google Cloud partners can accelerate innovation through **voice-first AI experiences** with **Datadog-powered LLM observability**.
 
 ---
 
