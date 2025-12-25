@@ -120,22 +120,51 @@ A 3‑minute demo video will showcase:
 
 ---
 
-## 📦 Getting Started (WIP)
+## 📦 Getting Started
 
 ```bash
 # clone repo
 git clone https://github.com/seehiong/voicedoc-agent.git
+cd voicedoc-agent
 
 # install dependencies
 npm install
+```
 
-# run locally
+### ⚙️ Configuration
+
+Before running the application, you need to set up your environment:
+
+1. **Copy the environment template**:
+   ```bash
+   cp .env.example .env.local
+   ```
+
+2. **Configure your API keys** in `.env.local`:
+   - `VERTEX_PROJECT_ID`: Your Google Cloud Project ID
+   - `ELEVENLABS_API_KEY`: Your ElevenLabs API Key
+   - `DATADOG_API_KEY`: Your Datadog API key
+   - `DATADOG_SITE`: e.g., `datadoghq.com`
+   - `NEXT_PUBLIC_DATADOG_CLIENT_TOKEN`: For RUM
+   - `NEXT_PUBLIC_DATADOG_APPLICATION_ID`: For RUM
+
+3. **Set up Google Cloud Service Account**:
+   - Download your service account JSON file from Google Cloud Console
+   - Place it in the project root (e.g., `voicedoc-agent-xxxxx.json`)
+   - Update `GOOGLE_APPLICATION_CREDENTIALS` in `.env.local` to point to this file:
+     ```
+     GOOGLE_APPLICATION_CREDENTIALS=./voicedoc-agent-xxxxx.json
+     ```
+
+### ▶️ Run Locally
+
+```bash
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Environment variables required in `.env.local`:
+### 📋 Environment Variables Reference
 
 *   `GOOGLE_APPLICATION_CREDENTIALS`: Path to your service account JSON.
 *   `VERTEX_PROJECT_ID`: Your Google Cloud Project ID.
