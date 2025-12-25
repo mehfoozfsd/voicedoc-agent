@@ -339,7 +339,7 @@ The project includes a multi-stage `Dockerfile` that leverages Next.js **Output 
     Open [http://localhost:3000](http://localhost:3000)
 
 > [!NOTE]
-> The service account file (`voicedoc-agent-a74658513d8b.json`) must be in the project root directory.
+> The service account file (`voicedoc-agent-xxxxx.json`) must be in the project root directory.
 
 ### 🚀 Deployment Steps (Docker Hub)
 1.  **Build and Push**:
